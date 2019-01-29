@@ -12,7 +12,7 @@ export default class PureChart extends React.Component {
   }
   renderChart () {
     if (this.props.type === 'line') {
-      return <LineChart {...this.props} />
+      return <LineChart data="1" {...this.props} />
     } else if (this.props.type === 'bar') {
       return <ColumnChart {...this.props} />
     } else if (this.props.type === 'pie') {
