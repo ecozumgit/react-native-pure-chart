@@ -1,12 +1,12 @@
 import _ from 'lodash'
 import React from 'react'
-import {View, Text} from 'react-native'
+import { View, Text } from 'react-native'
 
 const SINGLE_SERIES_WITH_NUMBERS = 0
 const SINGLE_SERIES_WITH_OBJECTS = 1
 const MULTI_SERIES = 2
 
-function flattenData (data) {
+function flattenData(data) {
   let numberCount = 0
   let objectWithYCount = 0
   let multiSeriesCount = 0
@@ -38,7 +38,7 @@ function flattenData (data) {
   }
 }
 
-function getMaxValue (data) {
+function getMaxValue(data) {
   let values = []
 
   data.map((value) => {
@@ -258,7 +258,7 @@ export const drawYAxisLabels = (arr, height, minValue, color = '#000000') => {
             bottom: 0,
             position: 'absolute'
           }}>
-          <Text style={{fontSize: 11}}>0</Text>
+          <Text style={{ fontSize: 11 }}>0</Text>
         </View>
       ) : arr.map((v, i) => {
         if (v[1] > height) return null
@@ -269,7 +269,7 @@ export const drawYAxisLabels = (arr, height, minValue, color = '#000000') => {
               bottom: v[1] - 5,
               position: 'absolute'
             }}>
-            <Text style={{fontSize: 11, color: color}}>{v[0]}</Text>
+            <Text style={{ fontSize: 11, color: color }}>{v[0]}</Text>
           </View>
         )
       })}
@@ -344,11 +344,12 @@ export const drawXAxisLabels = (sortedData, gap, color = '#000000', showEvenNumb
             <View key={'label' + i} style={{
               position: 'absolute',
               // left: data[0] - gap / 2,
+              paddingLeft: 10,
               left: data['gap'] - gap / 2,
               width: gap,
               alignItems: 'center'
             }}>
-              <Text style={{fontSize: 9, color: color}}>
+              <Text style={{ fontSize: 9, color: color }}>
                 {
                   // data[3]
                   data['x']
