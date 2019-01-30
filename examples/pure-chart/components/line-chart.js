@@ -59,8 +59,8 @@ class LineChart extends React.Component {
       }, initData(nextProps.data, this.props.height, this.props.gap, this.props.numberOfYAxisGuideLine)), () => {
         Animated.timing(this.state.fadeAnim, {
           toValue        : 1,
-          easing         : Easing.bounce,
-          duration       : 1000,
+          easing         : Easing.elastic(0),
+          duration       : 500,
           useNativeDriver: true
         }).start()
       })
