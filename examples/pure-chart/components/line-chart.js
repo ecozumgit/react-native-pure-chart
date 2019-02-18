@@ -256,7 +256,6 @@ class LineChart extends React.Component {
   }
 
   drawSelected (index) {
-    console.log('this.state', this.state)
     if (this.state.sortedData.length === 0) return null
     let data           = this.state.sortedData[0].data
     let dataSeriesName = data.seriesName
